@@ -49,7 +49,7 @@ echo "answer-3: $answer_3"
 tss=~/projects/data-sets/bed/tss.hg19.chr22.bed.gz
 genome=~/projects/data-sets/genome/hg19.genome
 
-answer_4=$(bedtools flank -i $tss -g $genome -s -l 1000 -r 1000 \
+answer_4=$(bedtools flank -i $tss -g $genome -s -l 1000 -r 0 \
     | bedtools sort -i - \
     | bedtools map -a - -b $signal -c 4 -o mean \
     | sort -k7n \
